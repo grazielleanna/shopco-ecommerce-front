@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <HomeBanner />
-      <main className="w-full max-w-screen-xl mx-auto py-16">
+      <main className="w-full max-w-screen-xl mx-auto px-2 lg:px-0 py-16">
         <NewArrivals />
 
         <hr className="my-16" />

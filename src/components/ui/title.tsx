@@ -6,7 +6,7 @@ interface TitleProps extends ComponentProps<'h3'> { }
 export function Title({ children, className, ...rest }: TitleProps) {
     return (
         <h3
-            className={twMerge('font-extrabold text-5xl uppercase', className)}
+            className={twMerge('font-extrabold text-4xl lg:text-5xl uppercase', className)}
             {...rest}
         >
             {children}
