@@ -1,7 +1,8 @@
-import { ProductFilter } from "@/app/product/components/filter";
-import { ProductPagination } from "@/app/product/components/pagination";
+
 import { ProductCard } from "@/components/ui/card-product";
 import { Title } from "@/components/ui/title";
+import { ProductFilter } from "../../product/components/filter";
+import { ProductPagination } from "../../product/components/pagination";
 
 export function CategoryPageDetail() {
     return (

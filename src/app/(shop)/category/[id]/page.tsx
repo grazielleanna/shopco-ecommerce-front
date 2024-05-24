@@ -1,4 +1,3 @@
-import { ProductFilter } from "@/app/product/components/filter";
 import { CategoryPageDetail } from "../components/detail";
 
 export default function CategoryPage() {

@@ -12,7 +12,9 @@ export function Header() {
             </div>
             <header className="w-11/12 max-w-screen-xl mx-auto py-4 flex items-center gap-x-8">
                 <SidebarMobile />
-                <h1 className="uppercase font-extrabold text-3xl">shop.co</h1>
+                <Link href="/">
+                    <h1 className="uppercase font-extrabold text-3xl">shop.co</h1>
+                </Link>
 
                 <div className="w-full flex items-center justify-end gap-x-6">
                     <div className="hidden xl:flex items-center gap-x-4">
@@ -25,7 +27,9 @@ export function Header() {
                         <Link href="/cart">
                             <ShoppingCart className="h-6 w-6" />
                         </Link>
-                        <CircleUserRound className="h-6 w-6" />
+                        <Link href="/login">
+                            <CircleUserRound className="h-6 w-6" />
+                        </Link>
                     </div>
                 </div>
             </header>
