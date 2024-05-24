@@ -22,7 +22,9 @@ export function Header() {
                     <HeaderSearch />
 
                     <div className="flex items-center  gap-x-4">
-                        <ShoppingCart className="h-6 w-6" />
+                        <Link href="/cart">
+                            <ShoppingCart className="h-6 w-6" />
+                        </Link>
                         <CircleUserRound className="h-6 w-6" />
                     </div>
                 </div>
