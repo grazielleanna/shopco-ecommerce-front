@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { HomeBanner } from "./components/banner";
 import { NewArrivals } from "./components/new-arrivals";
+import { TopSelling } from "./components/top-selling";
+import { Categories } from "./components/categories";
 
 export default function Home() {
   return (
@@ -9,6 +11,12 @@ export default function Home() {
       <HomeBanner />
       <main className="w-full max-w-screen-xl mx-auto py-16">
         <NewArrivals />
+
+        <hr className="my-16" />
+
+        <TopSelling />
+
+        <Categories />
       </main>
     </main>
   );

@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/ui/card-product";
 import { Title } from "@/components/ui/title";
 
-export function NewArrivals() {
+export function TopSelling() {
     return (
         <section>
-            <Title className="text-center">NEW ARRIVALS</Title>
+            <Title className="text-center">Top selling</Title>
 
             <div>
                 <ProductCard />
