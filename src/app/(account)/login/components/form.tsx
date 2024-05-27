@@ -15,9 +15,10 @@ type LoginFormType = {
 }
 
 export function LoginForm() {
-    const { control, handleSubmit } = useForm<LoginFormType>({
+    const { control, handleSubmit, formState } = useForm<LoginFormType>({
         resolver: zodResolver(createLoginValidation())
     });
+    const { errors } = formState;
 
     function onSubmit(values: LoginFormType) {
         try {
@@ -39,6 +40,7 @@ export function LoginForm() {
                 icon={<CircleUserRound />}
                 name="email"
                 control={control}
+                error={errors.email}
             />
             <Input
                 type="password"
@@ -46,9 +48,14 @@ export function LoginForm() {
                 icon={<KeyRound />}
                 name="password"
                 control={control}
+                error={errors.password}
             />
 
-            <Button type="submit" className="w-full">
+            <Button
+                type="submit"
+                className="w-full"
+                disabled={!formState.isValid || formState.isSubmitting}
+            >
                 Sign in
             </Button>
 

@@ -97,7 +97,7 @@ export function RegisterForm() {
             <Button
                 type="submit"
                 className="w-full"
-                disabled={!formState.isValid || !formState.isSubmitting}
+                disabled={!formState.isValid || formState.isSubmitting}
             >
                 Sign up
             </Button>
