@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
 import { ToastProvider } from "@/libs/react-toastify";
+import ReactQueryProvider from "@/libs/react-query";
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
       <body className={outfit.className}>
         <Header />
         <ToastProvider>
-          {children}
+          <ReactQueryProvider>
+            {children}
+          </ReactQueryProvider>
         </ToastProvider>
         <Footer />
       </body>

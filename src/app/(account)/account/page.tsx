@@ -1,5 +1,8 @@
-export default function Account(){
+import Link from "next/link";
+import { AccountWelcome } from "./components/welcome";
+
+export default function Account() {
     return (
-        <p>account</p>
+       <AccountWelcome />
     )
 }
