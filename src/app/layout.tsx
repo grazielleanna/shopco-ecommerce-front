@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
+import { ToastProvider } from "@/libs/react-toastify";
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -20,7 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={outfit.className}>
         <Header />
-        {children}
+        <ToastProvider>
+          {children}
+        </ToastProvider>
         <Footer />
       </body>
     </html>

@@ -12,7 +12,7 @@ export function Button({ children, outlined, className, ...rest }: ButtonProps) 
 
     return (
         <button
-            className={twMerge('h-[52px] w-52 rounded-[62px]', outlined ? outlinedClass : 'bg-black text-white', className)}
+            className={twMerge('h-[52px] w-52 rounded-[62px] disabled:opacity-70 disabled:cursor-not-allowed', outlined ? outlinedClass : 'bg-black text-white', className)}
             {...rest}
         >
             {children}
