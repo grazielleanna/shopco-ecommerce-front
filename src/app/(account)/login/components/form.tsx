@@ -8,6 +8,8 @@ import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createLoginValidation } from "../data/validations";
 import { toast } from "react-toastify";
+import { loginService } from "../data";
+import { useRouter } from "next/navigation";
 
 type LoginFormType = {
     email: string;
@@ -15,14 +17,28 @@ type LoginFormType = {
 }
 
 export function LoginForm() {
+    const router = useRouter();
+
     const { control, handleSubmit, formState } = useForm<LoginFormType>({
         resolver: zodResolver(createLoginValidation())
     });
     const { errors } = formState;
 
-    function onSubmit(values: LoginFormType) {
+    async function onSubmit(values: LoginFormType) {
         try {
+            const response = await loginService(values);
 
+            const model = {
+                token: response.token,
+                expires: response.expiresAt
+            }
+
+            await fetch('/api/login', {
+                body: JSON.stringify(model),
+                method: 'POST'
+            });
+
+            router.push('/account')
         } catch (error) {
             toast.error('Error when loging. Try again.');
             console.log('error', error);

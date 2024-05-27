@@ -1,5 +1,5 @@
 import { api } from "@/services/api";
-import { LoginModel } from "./interfaces";
+import { LoginModel, LoginResponseService } from "./interfaces";
 
 /**
  * @author: Grazielle Conceição
@@ -8,7 +8,9 @@ import { LoginModel } from "./interfaces";
  * @returns 
  */
 async function loginService(model: LoginModel) {
-    return await api.post('/login', model);
+    const { data } = await api.post<LoginResponseService>('/login', model);
+
+    return data;
 }
 
 export {
